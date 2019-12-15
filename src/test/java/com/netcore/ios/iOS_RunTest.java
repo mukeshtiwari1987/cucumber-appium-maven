@@ -1,11 +1,9 @@
-package com.lazada.ios;
+package com.netcore.ios;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
-/**
- * Created by vnsquall on 11/27/14.
- */
+
 
 //@RunWith(Cucumber.class)
 @CucumberOptions(

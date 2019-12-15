@@ -11,14 +11,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by vnsquall on 11/26/14.
- */
+
 public class DriverFactory {
     public static AppiumDriver driver = null;
     public static WebDriverWait driverWait = null;
     public String platformVersion = "7.1";
-    public String appPackage = "com.lazada.android"; //for Live build
+    public String appPackage = "com.netcore.smartech.java";
+    public String androidDeviceName = "b9101d77";
 
     public void setUp(String device) throws MalformedURLException {
         if (device.equals("iOS")) {
@@ -55,17 +54,16 @@ public class DriverFactory {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(CapabilityType.BROWSER_NAME, "");
-        capabilities.setCapability("appium-version", "1.3.1");
-        capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("platformVersion", "4.4");
-        capabilities.setCapability("deviceName", "Android Emulator");
+        capabilities.setCapability("appium-version", "1.9.1");
+        capabilities.setCapability("platformName", "android");
+        capabilities.setCapability("platformVersion", "9.0");
+        capabilities.setCapability("deviceName", androidDeviceName);
         capabilities.setCapability("automationName", "Appium");
         capabilities.setCapability("appPackage", appPackage);
-        capabilities.setCapability("appActivity", "pt.rocket.view.ChangeCountryFragmentActivity");
 
         String userDir = System.getProperty("user.dir");
-        String localApp = "lazada-android-live.apk";
-        String appPath = userDir + "/" + localApp;
+        String localApp = "crowdTest-2596e18b8ed3e9ecec5bbb532ad17a0a-3.apk";
+        String appPath = userDir + "/src/test/binary/" + localApp;
         capabilities.setCapability("app", appPath);
 
         driver = new AndroidDriver(serverAddress, capabilities);

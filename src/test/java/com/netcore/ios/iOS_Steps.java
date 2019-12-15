@@ -1,4 +1,4 @@
-package com.lazada.ios;
+package com.netcore.ios;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;

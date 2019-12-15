@@ -3,7 +3,7 @@
 <suite name="Suite1">
     <test name="AndroidSmoke_Test">
         <classes>
-            <class name="com.lazada.android.android_RunTest"/>
+            <class name="com.netcore.android.android_RunTest"/>
         </classes>
     </test>
 </suite>

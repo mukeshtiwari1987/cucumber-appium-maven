@@ -6,9 +6,7 @@ import utils.DriverFactory;
 
 import static junit.framework.Assert.assertTrue;
 
-/**
- * Created by vnsquall on 11/26/14.
- */
+
 public class iOS_InitPage extends DriverFactory {
     By countryPicker = By.name("LAHomeViewController_OpenPickerViewButton");
     By continueBtn = By.name("LAHomeViewController_ContinueButton");

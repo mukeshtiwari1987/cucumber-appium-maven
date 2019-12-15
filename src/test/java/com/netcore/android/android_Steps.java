@@ -1,4 +1,4 @@
-package com.lazada.android;
+package com.netcore.android;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -10,9 +10,7 @@ import utils.DriverFactory;
 
 import java.net.MalformedURLException;
 
-/**
- * Created by vnsquall on 11/28/14.
- */
+
 public class android_Steps {
     DriverFactory df = new DriverFactory();
     android_InitPage initPage = new android_InitPage();
@@ -22,19 +20,22 @@ public class android_Steps {
         df.setUp("android");
     }
 
-    @Given("^user is on InitPage$")
+    @Given("^user is on PNAutomation screen$")
     public void user_is_on_InitPage() throws InterruptedException {
         initPage.verifyInitPageLoaded();
+        initPage.enterEmail();
+        initPage.clickLoginBtn();
+        initPage.clickPNAutomationBtn();
     }
 
-    @When("^user click on country list$")
-    public void user_click_on_country_list() {
-        initPage.getCountryList();
+    @When("^user clicks on Simple Notification$")
+    public void user_click_on_simplepn() {
+        initPage.clickSimpleNotifications();
     }
 
-    @Then("^user choose Singapore$")
+    @Then("^user clicks on Simple Notification AH$")
     public void user_choose_Singapore() {
-        initPage.select_Country();
+        initPage.clickSimpleNotificationAH();
     }
 
     @After

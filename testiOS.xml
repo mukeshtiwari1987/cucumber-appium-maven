@@ -3,7 +3,7 @@
 <suite name="Suite1">
     <test name="IOSSmoke_Test">
         <classes>
-            <class name="com.lazada.ios.iOS_RunTest"/>
+            <class name="com.netcore.ios.iOS_RunTest"/>
         </classes>
     </test>
 </suite>

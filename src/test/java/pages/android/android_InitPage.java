@@ -1,30 +1,44 @@
 package pages.android;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import utils.DriverFactory;
 
-/**
- * Created by vnsquall on 11/28/14.
- */
+
 public class android_InitPage extends DriverFactory {
-    String countryNameID = appPackage + ":id/country_name";
-    By initTxt = By.xpath("//android.widget.TextView[contains(@text, 'Choose Country')]");
-    String country = "Singapore";
+    String emailTxtBox = appPackage + ":id/emailEditText";
+    By emailID = By.id(emailTxtBox);
+
+    String loginBtn = appPackage + ":id/loginButton";
+    By loginBtnId = By.id(loginBtn);
+
+    By PNAutomationBtn = By.xpath("//android.widget.TextView[@text='PNAutomation']");
+
+    By SimplePn = By.xpath("//android.widget.TextView[@text='Simple Notifications']");
+    By SimplePnAH = By.xpath("//android.widget.TextView[@text='Simple Notification (AH)']");
 
 
-    /**
-     * Verify the Init screen has loaded *
-     */
     public void verifyInitPageLoaded() {
-        driver.findElement(initTxt);
+        driver.findElement(emailID);
     }
 
-    public void getCountryList() {
-        driver.findElements(By.id("pt.rocket.lazada:id/country_name"));
+    public void enterEmail() {
+        driver.findElement(emailID).sendKeys("test1@netcore.co.in");
     }
 
-    public void select_Country() {
-        driver.findElement(By.xpath("//android.widget.TextView[@resource-id='" + countryNameID + "' and @text='" + country + "']")).click();
+    public void clickLoginBtn() {
+        driver.findElement(loginBtnId).click();
     }
 
+    public void clickPNAutomationBtn() {
+        driver.findElement(PNAutomationBtn).click();
+    }
+
+    public void clickSimpleNotifications() {
+        driver.findElement(SimplePn).click();
+    }
+
+    public void clickSimpleNotificationAH() {
+        driver.findElement(SimplePnAH).click();
+    }
 }
